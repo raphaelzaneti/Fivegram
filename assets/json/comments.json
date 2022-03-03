@@ -1,0 +1,22 @@
+{
+    "comments": [
+        {
+            "id": 1231,
+            "username": "lorem1234",
+            "full_name": "lorem ipsum",
+            "picture": "...",
+            "time": "2d",
+            "likes": 0,
+            "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend leo in mauris laoreet vehicula. In eu auctor enim. Morbi commodo, lectus sed rhoncus laoreet"
+        },
+        {
+            "id": 1432,
+            "username": "ipsum23",
+            "full_name": "lorem ipsum",
+            "picture": "...",
+            "time": "1d",
+            "likes": 0,
+            "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend leo in mauris laoreet vehicula. In eu auctor enim. Morbi commodo, lectus sed rhoncus laoreet"
+        }
+    ]
+}

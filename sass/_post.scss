@@ -1,0 +1,324 @@
+.post{
+    &__header{
+        margin-top: 1rem;
+        margin-left: 1rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &-details{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &-picture{
+            & img{
+                width: 2rem;
+                height: 2rem;
+                border-radius: 100%;
+                margin-right: 0.4rem;
+            }
+        }
+
+
+        &-user{
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1rem;
+        }
+
+        &-location{
+            font-size: 0.8rem;
+            line-height: 0.8rem;
+            margin: 0;
+            margin-top: 0.05rem;
+        }
+
+        &-options{
+            background: none;
+            border: none;
+            font-size: 2rem;
+
+            & span{
+                height: 70%;
+                display: block;
+                line-height: 0rem;
+            }
+        }        
+    }
+
+    &__photo{
+ 
+        margin-bottom: 0.8rem;
+
+        & img{
+            width: 100%;
+            height: 50vh;
+        }
+    }
+
+    &__interaction{
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        & button{
+            background: none;
+            border: none;
+            padding: 0;
+            padding-right: 0.6rem;
+        }
+
+        &-like-active{
+            color: red;
+        }
+    }
+
+    &__likes{
+        margin-top: 0.6rem;
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: row;
+        
+        &-followed-avatar{
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 100%;
+        }
+
+        &-highlight{
+            font-weight: bold;
+        }
+
+        &-time{
+            display: none;
+        }
+
+        & figure{
+            margin-right: 0.4rem;
+
+        }
+
+        & span{
+            display: inline-block;
+            padding-top: 0.1rem;           
+        }
+    }
+
+    &__description{
+        margin-left: 1rem;
+        margin-right: 2.4rem;
+
+        &-text{
+            line-height: 1;
+            display: inline-block;
+        }
+
+        &-user{
+            font-weight: bold;
+        }
+
+        &-more{
+            color: #929292;
+        }
+    }
+
+    &__comments{
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        
+        &-view{
+            color: #929292;   
+        }
+
+        &-time{
+            display: inline-block;
+            color: #929292;   
+            font-size: 0.8rem;
+        }
+
+        &-info-area{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 35%;
+            margin-top: 0.1rem;
+            grid-area: data;
+        }
+
+        &-like{
+            grid-area: img;
+            align-self: center;
+            height: 50%;
+            margin-left: 1rem;
+            cursor: pointer;
+            &-active{
+                color: red;
+            }
+        }
+
+        &-like:hover{
+            cursor: pointer;
+        }
+
+        &-comment{
+            margin-top: 1.4rem;
+            display: grid;
+            grid-template-areas: 
+                'com img'
+                'data img'
+            ;
+        }
+    }
+
+    &__input{
+        display: none;
+    }
+}
+
+@media(min-width: 375px){
+    .post__photo img{
+        height: 60vh;
+    }
+}
+
+@media(min-width: 600px){
+    .post__photo img{
+        height: 100%;
+    }
+}
+
+@media(min-width: 799px){
+    .post{
+        display: grid;
+        grid-template-areas: 
+            'img header'
+            'img description'
+            'img comments'
+            'img interaction'
+            'img likes'
+            'img input'
+        ;
+        grid-template-columns: 7fr 5fr;
+        grid-template-rows: auto auto 2fr auto auto 0.2fr;
+
+        margin-bottom: 3rem;
+        padding-bottom: 1rem;
+    }
+
+    .post__header{
+        grid-area: header;
+        border-bottom: solid 1px #f2f2f2;
+        margin-left: 0;
+        padding-left: 1rem;
+    }
+
+    .post__photo{
+        grid-area: img;
+        height: 80vh;
+        margin-bottom: 0;
+    }
+
+    .post__description{
+        grid-area: description;
+        margin-top: 1.4rem;
+    }
+
+    .post__comments{
+        grid-area: comments;
+        border-bottom: solid 1px #f2f2f2;
+        margin-left: 0;
+        padding-left: 1rem;
+
+        &-time{
+            display: none;
+        }
+
+        &-user{
+            display: inline-block;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1rem;
+            margin-right: 0.4rem;
+        }
+
+        &-text{
+            line-height: 1;
+            display: inline-block;
+        }
+
+        &-info{
+            display: inline-block;
+            color: #929292;   
+            font-size: 0.8rem;
+        }
+    }
+
+    .post__interaction{
+        grid-area: interaction;
+        margin-top: 1rem;
+        
+    }
+
+    .post__likes{
+        grid-area: likes;
+
+        border-bottom: solid 1px #f2f2f2;
+        margin-left: 0;
+        padding-left: 1rem;
+
+        &-time{
+            display: inline-block;
+            color: #929292;   
+            font-size: 0.8rem;
+        }
+    }
+
+    .post__input{
+        grid-area: input;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 0.8rem;
+
+        & button{
+            background: none;
+            border: none;
+        }
+
+        &-publish{
+            color: #0d95e9;
+        }
+
+        & input{
+            border: none;
+
+            &:focus-visible{
+                border: none;
+            }
+        }
+    }
+}
+
+@media(min-width:1279px){
+    .post__input {
+        
+        justify-content: flex-start;
+        
+        & button{
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        &>&-publish{
+            margin-left: auto;
+        }
+        
+    }
+    
+}
